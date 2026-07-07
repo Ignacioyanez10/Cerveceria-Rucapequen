@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://kit.fontawesome.com/c7dc818499.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>CERVECERIA RUCAPEQUEN</title>
+</head>
+
+<body>
+    <div id="age-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 class="logo-modal">Bienvenido</h2>
+            <div class="divisor-lupulo-centrado"></div>
+            <p class="modal-pregunta">¿Eres mayor de edad?</p>
+            <div class="modal-botones">
+                <button id="btn-si" class="btn-modal btn-confirmar">Sí</button>
+                <button id="btn-no" class="btn-modal btn-cancelar">No</button>
+            </div>
+        </div>
+    </div>
+
+    <header id="site-header">
+        <div class="logo">
+            <a href="#">
+                <img src="IMG/logoo.png" alt="LogoCervecería" class="logo-img">
+                <h1>CERVECERIA RUCAPEQUEN</h1>
+            </a>
+        </div>
+        <div class="hamburguesa">
+            <label for="menu-toggle" class="hamburguesa"></label>
+            <nav id="main-nav">
+                <ul>
+                    <li> <a href="#conocenos"> Conócenos </a> </li>
+                    <li> <a href="#cervezas"> Nuestras Cervezas </a> </li>
+                    <li> <a href="#sala-ventas"> Sala de Ventas </a> </li>
+                    <li> <a href="#contacto"> Contacto </a> </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="carrousel">
+        <div class="grande">
+            <img src="IMG/salaventas.png" alt="imagen 1" class="img img">
+            <img src="IMG/WhatsApp Image 2026-06-22 at 08.49.33.jpeg" alt="imagen 1" class="img img">
+            <img src="IMG/carrusel3 .png" alt="imagen 1" class="img img">
+            <img src="IMG/carrusel4.png" alt="imagen 1" class="img img">
+        </div>
+
+        <ul class="puntos">
+            <li class="punto"></li>
+            <li class="punto"></li>
+            <li class="punto"></li>
+            <li class="punto"></li>
+        </ul>
+    </div>
+    <section id="cervezas">
+        <div class="cervezas-img"></div>
+        <div class="contenedor-cervezas">
+            <div class="text-cervezas">
+                <h2>Cerveza Artesanal</h2>
+                <div class="divisor-lupulo-lateral"></div>
+                <p>Estilo inconfundible y carácter audaz que nacen desde el corazón de nuestra familia. Elaboramos cada
+                    lote con paciencia y maestría, seleccionando meticulosamente las mejores maltas y lúpulos para
+                    llevar a tu copa una experiencia cervecera superior.</p>
+            </div>
+
+            <div class="galeria">
+                <img src="IMG/platano-miel.jpeg" alt="imagen 1" class="img">
+                <img src="IMG/maqui.jpeg" alt="imagen 1" class="img">
+                <img src="IMG/calafate.jpeg" alt="imagen 1" class="img">
+            </div> <a href="tienda_rucapequen.html" class="btn-principal" id="ver-catalogo">Ver todas las cervezas</a>
+        </div>
+    </section>
+
+    <section id="sala-ventas">
+        <div class="sala-ventas-img"></div>
+        <div class="contenedor-sala-ventas">
+            <div class="text-sala-ventas">
+                <h3>Sala de Ventas</h3>
+                <div class="divisor-lupulo-lateral"></div>
+                <p>Descubre nuestra selección de cervezas artesanales en nuestra sala de ventas. Contamos con una amplia
+                    variedad de sabores y estilos para satisfacer todos los paladares.</p>
+            </div>
+        </div>
+        <button class="btn-mapa" onclick="abrirModal()">Ver Ubicación</button>
+
+        <div id="modal-mapa" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar" onclick="cerrarModal()">&times;</span>
+
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d10763.743452247916!2d-72.29873703675898!3d-36.67257571059771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzbCsDQwJzE5LjAiUyA3MsKwMTcnMzAuNyJX!5e0!3m2!1ses!2scl!4v1782192466208!5m2!1ses!2scl"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="conocenos">
+        <div class="contenedor-historia">
+            <div class="text-historia">
+                <h3>Nuestra Historia</h3>
+                <div class="divisor-lupulo-lateral"></div>
+                <p>Cervecería Rucapequen no nació en una oficina, sino entre el vapor de ollas caseras y la búsqueda
+                    incansable de un sabor que no se encuentra en los estantes comunes. Lo que comenzó como un
+                    experimento personal, movido por la obsesión de perfeccionar el equilibrio entre la malta y el
+                    lúpulo, se convirtió rápidamente en un estilo de vida. Tras años de pruebas, errores y muchos
+                    brindis, logramos unir el respeto por la técnica tradicional con la audacia de nuestra propia
+                    visión. Hoy, esa misma chispa de rebeldía y amor por el detalle es la que fluye en cada uno de
+                    nuestros barriles: una cerveza sin filtros ni atajos, creada para quienes saben que el sabor real
+                    tiene nombre propio. Bienvenidos a la experiencia Rucapequen.</p>
+            </div>
+            <div class="historia-img"
+                style="background-image: url('https://archivoferroviario.cl/wp-content/uploads/2022/01/Rucapeque%CC%81n_web-10.jpg');">
+            </div>
+        </div>
+    </section>
+    </main>
+    <section id="contacto"></section>
+    <footer>
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/profile.php?id=61550966312333" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="https://wa.me/56961707038" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <a href="https://www.instagram.com/cerveza.rucapequen/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+        <div class="copy">
+            <p>Cerveza Rucapequen &copy; 2026. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    </section>
+    <script src="JS/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://kit.fontawesome.com/c7dc818499.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Tienda - CERVECERIA RUCAPEQUEN</title>
+</head>
+<style>
+    body.body-tienda,
+    .main-catalogo {
+        background-color: rgb(26, 26, 26) !important;
+        color: #f5f5f5 !important;
+    }
+
+    .tarjeta-producto {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+        backdrop-filter: blur(20px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.3) !important;
+        border-left: 1px solid rgba(255, 255, 255, 0.3) !important;
+
+        border-radius: 24px !important;
+        padding: 30px 22px !important;
+        text-align: center;
+        box-sizing: border-box;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+
+        transition: all 0.5s cubic-bezier(0.15, 0.85, 0.35, 1) !important;
+    }
+
+    .tarjeta-producto:hover {
+        transform: translateY(-12px) scale(1.03) !important;
+        /* Flota aún más alto */
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%) !important;
+        border-color: rgba(212, 175, 55, 0.5) !important;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6),
+            0 0 40px rgba(212, 175, 55, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    }
+
+    .tarjeta-producto img {
+        max-height: 230px;
+        object-fit: contain;
+        filter: drop-shadow(5px 15px 15px rgba(0, 0, 0, 0.65)) !important;
+        transition: transform 0.5s cubic-bezier(0.15, 0.85, 0.35, 1) !important;
+    }
+
+
+    .tarjeta-producto:hover img {
+        transform: scale(1.1) translateY(-8px) rotate(1deg) !important;
+        filter: drop-shadow(8px 25px 20px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 15px rgba(212, 175, 55, 0.3)) !important;
+    }
+
+    .tarjeta-producto h4 {
+        color: #ffffff !important;
+        font-size: 20px !important;
+        margin: 18px 0 6px 0 !important;
+        font-weight: 700 !important;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6) !important;
+    }
+
+    .tarjeta-producto .descripcion {
+        color: #dddddd !important;
+        font-size: 14px !important;
+        line-height: 1.4;
+    }
+
+    .tarjeta-producto .info-tecnica {
+        color: #999999 !important;
+        font-size: 12px !important;
+        margin-top: 8px !important;
+    }
+
+    .tarjeta-producto .precio {
+        color: #d4af37 !important;
+        font-size: 24px !important;
+        font-weight: 800 !important;
+        margin: 15px 0 !important;
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.2) !important;
+    }
+</style>
+
+<body class="body-tienda">
+
+    <header id="site-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="IMG/logoo.png" alt="LogoCervecería" class="logo-img">
+                <h1>CERVECERIA RUCAPEQUEN</h1>
+            </a>
+        </div>
+        <div class="hamburguesa">
+            <nav id="main-nav">
+                <ul>
+                    <li> <a href="index.html#conocenos"> Conócenos </a> </li>
+                    <li> <a href="index.html#cervezas"> Nuestras Cervezas </a> </li>
+                    <li> <a href="index.html#sala-ventas"> Sala de Ventas </a> </li>
+                    <li> <a href="index.html#contacto"> Contacto </a> </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main-catalogo">
+
+        <div class="mini-banner-cervezas">
+            <div class="mini-banner-textos">
+                <h2>Nuestras <span>Cervezas</span></h2>
+                <p></p>
+            </div>
+        </div>
+
+        <h2 class="titulo-seccion">Nuestro Catálogo</h2>
+
+        <div class="productos-grid" id="contenedor-productos">
+
+            <div class="tarjeta-producto" data-nombre="Cerveza Ámbar">
+                <img src="IMG/ambarcentrada.png" alt="Cerveza Ámbar">
+                <h4>Cerveza Ámbar</h4>
+                <p class="descripcion">Tiene más malta caramelo y cuerpo.</p>
+                <p class="info-tecnica">Temp: 7°C a 10°C | Grado: 5°</p>
+
+                <div class="selector-formato-contenedor">
+                    <label for="formato-ambar">Selecciona Formato:</label>
+                    <select id="formato-ambar" class="select-formato">
+                        <option value="Botella 330cc" data-precio="3000">Botella 330 cc — $3.000</option>
+                        <option value="Botella 550cc" data-precio="5000">Botella 550 cc — $5.000</option>
+                        <option value="Pack 2x330cc" data-precio="6000">Pack 2 Botellas (330 cc) — $6.000</option>
+                        <option value="Pack 4x330cc" data-precio="11000">Pack 4 Botellas (330 cc) — $11.000</option>
+                        <option value="Pack 2x500cc" data-precio="10000">Pack 2 Botellas (500 cc) — $10.000</option>
+                        <option value="Pack 3x500cc" data-precio="13000">Pack 3 Botellas (500 cc) — $13.000</option>
+                    </select>
+                </div>
+
+                <button class="btn-agregar-carrito">Agregar al carrito</button>
+            </div>
+
+            <div class="tarjeta-producto" data-nombre="Cerveza Berries">
+                <img src="IMG/cervezaberries.png" alt="Cerveza Berries">
+                <h4>Cerveza Berries</h4>
+                <p class="descripcion">Refrescante cerveza con frutos rojos.</p>
+                <p class="info-tecnica">Temp: 4°C y 7°C | Grado: 4.5°</p>
+
+                <div class="selector-formato-contenedor">
+                    <label for="formato-berries">Selecciona Formato:</label>
+                    <select id="formato-berries" class="select-formato">
+                        <option value="Botella 330cc" data-precio="3000">Botella 330 cc — $3.000</option>
+                        <option value="Botella 550cc" data-precio="5000">Botella 550 cc — $5.000</option>
+                        <option value="Pack 2x330cc" data-precio="6000">Pack 2 Botellas (330 cc) — $6.000</option>
+                        <option value="Pack 4x330cc" data-precio="11000">Pack 4 Botellas (330 cc) — $11.000</option>
+                        <option value="Pack 2x500cc" data-precio="10000">Pack 2 Botellas (500 cc) — $10.000</option>
+                        <option value="Pack 3x500cc" data-precio="13000">Pack 3 Botellas (500 cc) — $13.000</option>
+                    </select>
+                </div>
+
+                <button class="btn-agregar-carrito">Agregar al carrito</button>
+            </div>
+
+            <div class="tarjeta-producto" data-nombre="Cerveza Calafate">
+                <img src="IMG/cervezacalafate.png" alt="Cerveza Calafate">
+                <h4>Cerveza Calafate</h4>
+                <p class="descripcion">Elaborada con el fruto patagónico.</p>
+                <p class="info-tecnica">Temp: 6°C y 8°C | Grado: 4.5°</p>
+
+                <div class="selector-formato-contenedor">
+                    <label for="formato-calafate">Selecciona Formato:</label>
+                    <select id="formato-calafate" class="select-formato">
+                        <option value="Botella 330cc" data-precio="3000">Botella 330 cc — $3.000</option>
+                        <option value="Botella 550cc" data-precio="5000">Botella 550 cc — $5.000</option>
+                        <option value="Pack 2x330cc" data-precio="6000">Pack 2 Botellas (330 cc) — $6.000</option>
+                        <option value="Pack 4x330cc" data-precio="11000">Pack 4 Botellas (330 cc) — $11.000</option>
+                        <option value="Pack 2x500cc" data-precio="10000">Pack 2 Botellas (500 cc) — $10.000</option>
+                        <option value="Pack 3x500cc" data-precio="13000">Pack 3 Botellas (500 cc) — $13.000</option>
+                    </select>
+                </div>
+
+                <button class="btn-agregar-carrito">Agregar al carrito</button>
+            </div>
+
+            <div class="tarjeta-producto" data-nombre="Cerveza Chirimoya Alegre">
+                <img src="IMG/cervezachirimoyaalegre.png" alt="Cerveza Chirimoya">
+                <h4>Cerveza Chirimoya Alegre</h4>
+                <p class="descripcion">Combinación tropical de chirimoya.</p>
+                <p class="info-tecnica">Temp: 4°C y 7°C | Grado: 4.5°</p>
+
+                <div class="selector-formato-contenedor">
+                    <label for="formato-chirimoya">Selecciona Formato:</label>
+                    <select id="formato-chirimoya" class="select-formato">
+                        <option value="Botella 330cc" data-precio="3000">Botella 330 cc — $3.000</option>
+                        <option value="Botella 550cc" data-precio="5000">Botella 550 cc — $5.000</option>
+                        <option value="Pack 2x330cc" data-precio="6000">Pack 2 Botellas (330 cc) — $6.000</option>
+                        <option value="Pack 4x330cc" data-precio="11000">Pack 4 Botellas (330 cc) — $11.000</option>
+                        <option value="Pack 2x500cc" data-precio="10000">Pack 2 Botellas (500 cc) — $10.000</option>
+                        <option value="Pack 3x500cc" data-precio="13000">Pack 3 Botellas (500 cc) — $13.000</option>
+                    </select>
+                </div>
+
+                <button class="btn-agregar-carrito">Agregar al carrito</button>
+            </div>
+
+            <div class="tarjeta-producto" data-nombre="Cerveza Mango Maracuyá">
+                <img src="IMG/cervezamangomaracuya.png" alt="Cerveza Mango Maracuyá">
+                <h4>Cerveza Mango Maracuyá</h4>
+                <p class="descripcion">Cerveza tropical con notas intensas.</p>
+                <p class="info-tecnica">Temp: 4°C y 7°C | Grado: 4.5°</p>
+
+                <div class="selector-formato-contenedor">
+                    <label for="formato-mango">Selecciona Formato:</label>
+                    <select id="formato-mango" class="select-formato">
+                        <option value="Botella 330cc" data-precio="3000">Botella 330 cc — $3.000</option>
+                        <option value="Botella 550cc" data-precio="5000">Botella 550 cc — $5.000</option>
+                        <option value="Pack 2x330cc" data-precio="6000">Pack 2 Botellas (330 cc) — $6.000</option>
+                        <option value="Pack 4x330cc" data-precio="11000">Pack 4 Botellas (330 cc) — $11.000</option>
+                        <option value="Pack 2x500cc" data-precio="10000">Pack 2 Botellas (500 cc) — $10.000</option>
+                        <option value="Pack 3x500cc" data-precio="13000">Pack 3 Botellas (500 cc) — $13.000</option>
+                    </select>
+                </div>
+
+                <button class="btn-agregar-carrito">Agregar al carrito</button>
+            </div>
+
+            <div class="tarjeta-producto" data-nombre="Cerveza Maqui">
+                <img src="IMG/cervezamaqui.png" alt="Cerveza Maqui">
+                <h4>Cerveza Maqui</h4>
+                <p class="descripcion">Elaborada con maqui antioxidante.</p>
+                <p class="info-tecnica">Temp: 4°C y 7°C | Grado: 4.5°</p>
+
+                <div class="selector-formato-contenedor">
+                    <label for="formato-maqui">Selecciona Formato:</label>
+                    <select id="formato-maqui" class="select-formato">
+                        <option value="Botella 330cc" data-precio="3000">Botella 330 cc — $3.000</option>
+                        <option value="Botella 550cc" data-precio="5000">Botella 550 cc — $5.000</option>
+                        <option value="Pack 2x330cc" data-precio="6000">Pack 2 Botellas (330 cc) — $6.000</option>
+                        <option value="Pack 4x330cc" data-precio="11000">Pack 4 Botellas (330 cc) — $11.000</option>
+                        <option value="Pack 2x500cc" data-precio="10000">Pack 2 Botellas (500 cc) — $10.000</option>
+                        <option value="Pack 3x500cc" data-precio="13000">Pack 3 Botellas (500 cc) — $13.000</option>
+                    </select>
+                </div>
+
+                <button class="btn-agregar-carrito">Agregar al carrito</button>
+            </div>
+
+            <div class="tarjeta-producto" data-nombre="Cerveza Mojito Chechero">
+                <img src="IMG/cervezamojitochechero.png" alt="Cerveza Mojito">
+                <h4>Cerveza Mojito Chechero</h4>
+                <p class="descripcion">Inspirada en el clásico cóctel.</p>
+                <p class="info-tecnica">Temp: 2°C y 4°C | Grado: 4.5°</p>
+
+                <div class="selector-formato-contenedor">
+                    <label for="formato-mojito">Selecciona Formato:</label>
+                    <select id="formato-mojito" class="select-formato">
+                        <option value="Botella 330cc" data-precio="3000">Botella 330 cc — $3.000</option>
+                        <option value="Botella 550cc" data-precio="5000">Botella 550 cc — $5.000</option>
+                        <option value="Pack 2x330cc" data-precio="6000">Pack 2 Botellas (330 cc) — $6.000</option>
+                        <option value="Pack 4x330cc" data-precio="11000">Pack 4 Botellas (330 cc) — $11.000</option>
+                        <option value="Pack 2x500cc" data-precio="10000">Pack 2 Botellas (500 cc) — $10.000</option>
+                        <option value="Pack 3x500cc" data-precio="13000">Pack 3 Botellas (500 cc) — $13.000</option>
+                    </select>
+                </div>
+
+                <button class="btn-agregar-carrito">Agregar al carrito</button>
+            </div>
+
+            <div class="tarjeta-producto" data-nombre="Cerveza Papaya">
+                <img src="IMG/cervezapapaya.png" alt="Cerveza Papaya">
+                <h4>Cerveza Papaya</h4>
+                <p class="descripcion">Suave y tropical con papaya natural.</p>
+                <p class="info-tecnica">Temp: 4°C a 7°C | Grado: 4.5°</p>
+
+                <div class="selector-formato-contenedor">
+                    <label for="formato-papaya">Selecciona Formato:</label>
+                    <select id="formato-papaya" class="select-formato">
+                        <option value="Botella 330cc" data-precio="3000">Botella 330 cc — $3.000</option>
+                        <option value="Botella 550cc" data-precio="5000">Botella 550 cc — $5.000</option>
+                        <option value="Pack 2x330cc" data-precio="6000">Pack 2 Botellas (330 cc) — $6.000</option>
+                        <option value="Pack 4x330cc" data-precio="11000">Pack 4 Botellas (330 cc) — $11.000</option>
+                        <option value="Pack 2x500cc" data-precio="10000">Pack 2 Botellas (500 cc) — $10.000</option>
+                        <option value="Pack 3x500cc" data-precio="13000">Pack 3 Botellas (500 cc) — $13.000</option>
+                    </select>
+                </div>
+
+                <button class="btn-agregar-carrito">Agregar al carrito</button>
+            </div>
+
+            <div class="tarjeta-producto" data-nombre="Cerveza Plátano y Miel">
+                <img src="IMG/cervezaplatanomiel.png" alt="Cerveza Plátano y Miel">
+                <h4>Cerveza Plátano y Miel</h4>
+                <p class="descripcion">Dulce y aromática combinación.</p>
+                <p class="info-tecnica">Temp: 8°C y 10°C | Grado: 4.5°</p>
+
+                <div class="selector-formato-contenedor">
+                    <label for="formato-platano">Selecciona Formato:</label>
+                    <select id="formato-platano" class="select-formato">
+                        <option value="Botella 330cc" data-precio="3000">Botella 330 cc — $3.000</option>
+                        <option value="Botella 550cc" data-precio="5000">Botella 550 cc — $5.000</option>
+                        <option value="Pack 2x330cc" data-precio="6000">Pack 2 Botellas (330 cc) — $6.000</option>
+                        <option value="Pack 4x330cc" data-precio="11000">Pack 4 Botellas (330 cc) — $11.000</option>
+                        <option value="Pack 2x500cc" data-precio="10000">Pack 2 Botellas (500 cc) — $10.000</option>
+                        <option value="Pack 3x500cc" data-precio="13000">Pack 3 Botellas (500 cc) — $13.000</option>
+                    </select>
+                </div>
+
+                <button class="btn-agregar-carrito">Agregar al carrito</button>
+            </div>
+
+            <div class="tarjeta-producto" data-nombre="Cerveza Rubia">
+                <img src="IMG/cervezarubia.png" alt="Cerveza Rubia">
+                <h4>Cerveza Rubia</h4>
+                <p class="descripcion">Cerveza clásica rubia y ligera.</p>
+                <p class="info-tecnica">Temp: 4°C a 6°C | Grado: 3°</p>
+
+                <div class="selector-formato-contenedor">
+                    <label for="formato-rubia">Selecciona Formato:</label>
+                    <select id="formato-rubia" class="select-formato">
+                        <option value="Botella 330cc" data-precio="3000">Botella 330 cc — $3.000</option>
+                        <option value="Botella 550cc" data-precio="5000">Botella 550 cc — $5.000</option>
+                        <option value="Pack 2x330cc" data-precio="6000">Pack 2 Botellas (330 cc) — $6.000</option>
+                        <option value="Pack 4x330cc" data-precio="11000">Pack 4 Botellas (330 cc) — $11.000</option>
+                        <option value="Pack 2x500cc" data-precio="10000">Pack 2 Botellas (500 cc) — $10.000</option>
+                        <option value="Pack 3x500cc" data-precio="13000">Pack 3 Botellas (500 cc) — $13.000</option>
+                    </select>
+                </div>
+
+                <button class="btn-agregar-carrito">Agregar al carrito</button>
+            </div>
+
+            <div class="tarjeta-producto" data-nombre="Cerveza Sandía">
+                <img src="IMG/cervezasandia.png" alt="Cerveza Sandía">
+                <h4>Cerveza Sandía</h4>
+                <p class="descripcion">Ideal para el verano, muy refrescante.</p>
+                <p class="info-tecnica">Temp: 4°C y 6°C | Grado: 4.5°</p>
+
+                <div class="selector-formato-contenedor">
+                    <label for="formato-sandia">Selecciona Formato:</label>
+                    <select id="formato-sandia" class="select-formato">
+                        <option value="Botella 330cc" data-precio="3000">Botella 330 cc — $3.000</option>
+                        <option value="Botella 550cc" data-precio="5000">Botella 550 cc — $5.000</option>
+                        <option value="Pack 2x330cc" data-precio="6000">Pack 2 Botellas (330 cc) — $6.000</option>
+                        <option value="Pack 4x330cc" data-precio="11000">Pack 4 Botellas (330 cc) — $11.000</option>
+                        <option value="Pack 2x500cc" data-precio="10000">Pack 2 Botellas (500 cc) — $10.000</option>
+                        <option value="Pack 3x500cc" data-precio="13000">Pack 3 Botellas (500 cc) — $13.000</option>
+                    </select>
+                </div>
+
+                <button class="btn-agregar-carrito">Agregar al carrito</button>
+            </div>
+
+            <div class="tarjeta-producto" data-nombre="Cerveza Stout">
+                <img src="IMG/cervezastout.png" alt="Cerveza Stout">
+                <h4>Cerveza Stout</h4>
+                <p class="descripcion">Notas de café, chocolate y vainilla.</p>
+                <p class="info-tecnica">Temp: 10°C a 13°C | Grado: 6°</p>
+
+                <div class="selector-formato-contenedor">
+                    <label for="formato-stout">Selecciona Formato:</label>
+                    <select id="formato-stout" class="select-formato">
+                        <option value="Botella 330cc" data-precio="3000">Botella 330 cc — $3.000</option>
+                        <option value="Botella 550cc" data-precio="5000">Botella 550 cc — $5.000</option>
+                        <option value="Pack 2x330cc" data-precio="6000">Pack 2 Botellas (330 cc) — $6.000</option>
+                        <option value="Pack 4x330cc" data-precio="11000">Pack 4 Botellas (330 cc) — $11.000</option>
+                        <option value="Pack 2x500cc" data-precio="10000">Pack 2 Botellas (500 cc) — $10.000</option>
+                        <option value="Pack 3x500cc" data-precio="13000">Pack 3 Botellas (500 cc) — $13.000</option>
+                    </select>
+                </div>
+
+                <button class="btn-agregar-carrito">Agregar al carrito</button>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="cart-floating-btn" class="carrito-flotante">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="cart-badge" class="badge-carrito">0</span>
+    </div>
+
+    <div id="carrito-overlay" class="carrito-overlay"></div>
+    <div id="carrito-drawer" class="carrito-drawer">
+        <div class="carrito-header">
+            <h3>Tu Pedido</h3>
+            <button id="btn-cerrar-carrito" class="btn-cerrar">&times;</button>
+        </div>
+        <div id="carrito-contenido" class="carrito-contenido"></div>
+        <div class="carrito-footer">
+            <div class="total-contenedor">
+                <span>Total:</span>
+                <span id="carrito-total">$0</span>
+            </div>
+            <button id="btn-enviar-pedido" class="btn-enviar-pedido">Enviar Pedido por WhatsApp</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/profile.php?id=61550966312333" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="https://wa.me/56961707038" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <a href="https://www.instagram.com/cerveza.rucapequen/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (
+                e.key === "F12" ||
+                (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) ||
+                (e.ctrlKey && e.key === "U")
+            ) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+    <script src="JS/tienda.js"></script>
+</body>
+
+</html>

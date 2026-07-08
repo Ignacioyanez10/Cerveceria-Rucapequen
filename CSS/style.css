@@ -22,6 +22,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background-color: #ffffff; 
     font-family: var(--fuente-principal);
@@ -278,6 +283,59 @@ body {
 .carrousel .punto.activo {
     background-color: var(--color-dorado);
     transform: scale(1.2); 
+}
+
+@media (max-width: 768px) {
+    #site-header {
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        padding: 15px 4%;
+        gap: 10px;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .logo h1 {
+        font-size: 1.05rem;
+        text-align: center;
+    }
+
+    .logo a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .hamburguesa {
+        width: 100%;
+    }
+
+    #main-nav {
+        width: 100%;
+    }
+
+    #main-nav ul {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    #main-nav a {
+        flex-grow: 0;
+        width: 100%;
+        text-align: center;
+        padding: 12px 10px;
+        font-size: 15px;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    #main-nav li:last-child a {
+        border-bottom: none;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1357,4 +1415,4 @@ color: inherit;
     100% {
         left: 150%;
     }
-}   
+}

@@ -337,6 +337,11 @@ body {
         border-bottom: 1px solid rgba(212, 175, 55, 0.15);
     }
 
+    #main-nav ul li {
+        width: 100%;
+        padding: 5px;
+    }
+
     #main-nav li:last-child a {
         border-bottom: none;
     }
